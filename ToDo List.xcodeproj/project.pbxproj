@@ -20,6 +20,7 @@
 		D4C27CB6270B4091001E36BC /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C27CB5270B4091001E36BC /* ListTableViewCell.swift */; };
 		D4C27CB8270B659F001E36BC /* ToDoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C27CB7270B659F001E36BC /* ToDoItems.swift */; };
 		D4C27CBA270B6C8A001E36BC /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C27CB9270B6C8A001E36BC /* LocalNotificationManager.swift */; };
+		D4C27CBC270B7261001E36BC /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C27CBB270B7261001E36BC /* UIViewController+alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D4C27CB5270B4091001E36BC /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		D4C27CB7270B659F001E36BC /* ToDoItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItems.swift; sourceTree = "<group>"; };
 		D4C27CB9270B6C8A001E36BC /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		D4C27CBB270B7261001E36BC /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				D45DDF982701FB5300BEE28E /* AppDelegate.swift */,
 				D45DDF9A2701FB5300BEE28E /* SceneDelegate.swift */,
 				D4C27CB9270B6C8A001E36BC /* LocalNotificationManager.swift */,
+				D4C27CBB270B7261001E36BC /* UIViewController+alert.swift */,
 				D45DDFCA27023A0800BEE28E /* ToDoItem.swift */,
 				D45DDF9C2701FB5300BEE28E /* ToDoListViewController.swift */,
 				D45DDFC82702058A00BEE28E /* ToDoDetailTableViewController.swift */,
@@ -276,6 +279,7 @@
 				D45DDF9D2701FB5300BEE28E /* ToDoListViewController.swift in Sources */,
 				D4C27CB8270B659F001E36BC /* ToDoItems.swift in Sources */,
 				D45DDF992701FB5300BEE28E /* AppDelegate.swift in Sources */,
+				D4C27CBC270B7261001E36BC /* UIViewController+alert.swift in Sources */,
 				D45DDFCB27023A0800BEE28E /* ToDoItem.swift in Sources */,
 				D45DDFC92702058A00BEE28E /* ToDoDetailTableViewController.swift in Sources */,
 				D45DDF9B2701FB5300BEE28E /* SceneDelegate.swift in Sources */,
