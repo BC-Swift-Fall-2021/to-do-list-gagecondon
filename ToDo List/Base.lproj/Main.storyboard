@@ -116,7 +116,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="textFieldEditingChanged:" destination="uPC-Z0-iZg" eventType="editingDidEnd" id="BH6-tw-aGp"/>
+                                                        <action selector="textFieldEditingChanged:" destination="uPC-Z0-iZg" eventType="editingChanged" id="ML0-bQ-nQL"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -140,14 +140,29 @@
                                                         <action selector="reminderSwitchChanged:" destination="uPC-Z0-iZg" eventType="valueChanged" id="3We-3A-KaR"/>
                                                     </connections>
                                                 </switch>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ew4-gn-ErS">
+                                                    <rect key="frame" x="192" y="0.0" width="182" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="182" id="eiB-cW-ib9"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="uPC-Z0-iZg" eventType="valueChanged" id="SkB-FQ-cvw"/>
+                                                    </connections>
+                                                </datePicker>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/12/12, 12:12:12PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-Sa-fIQ">
-                                                    <rect key="frame" x="189" y="12" width="181" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="180" y="0.0" width="190" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Ew4-gn-ErS" secondAttribute="trailing" constant="16" id="D42-cr-DUY"/>
+                                                <constraint firstItem="Ew4-gn-ErS" firstAttribute="top" secondItem="RM2-jq-Ldf" secondAttribute="top" id="IaF-Cw-AFp"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ew4-gn-ErS" secondAttribute="bottom" id="oKf-29-Hmk"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="fe0-aX-dhl">
@@ -211,6 +226,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="compactDatePicker" destination="Ew4-gn-ErS" id="24S-sE-3TV"/>
                         <outlet property="dateLabel" destination="Fdy-Sa-fIQ" id="Nid-6q-SSh"/>
                         <outlet property="datePicker" destination="QOt-T8-YGl" id="CXW-Qe-zeB"/>
                         <outlet property="nameField" destination="FXj-HZ-Lfq" id="mV5-cS-e1s"/>

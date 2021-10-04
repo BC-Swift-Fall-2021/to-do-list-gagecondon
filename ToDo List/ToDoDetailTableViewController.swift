@@ -25,6 +25,7 @@ class ToDoDetailTableViewController: UITableViewController {
     @IBOutlet weak var noteView: UITextView!
     @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var compactDatePicker: UIDatePicker!
     
     var toDoItem: ToDoItem!
     
@@ -36,6 +37,15 @@ class ToDoDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 14.0, *) {
+            datePicker = compactDatePicker
+            datePicker.isHidden = false
+            dateLabel.isHidden = true
+        } else {
+            compactDatePicker.isHidden = true
+            dateLabel.isHidden = false
+        }
         
         //setup foreground notification
         let notificationCenter = NotificationCenter.default
@@ -68,6 +78,7 @@ class ToDoDetailTableViewController: UITableViewController {
         reminderSwitch.isOn = toDoItem.reminderSet
         dateLabel.textColor = (reminderSwitch.isOn ? .black : .gray)
         dateLabel.text = dateFormatter.string(from: toDoItem.date)
+        datePicker.isEnabled = reminderSwitch.isOn
         enableDisableSaveButton(text: nameField.text!)
         updateReminderSwitch()
     }
@@ -81,6 +92,7 @@ class ToDoDetailTableViewController: UITableViewController {
                 }
                 self.view.endEditing(true)
                 self.dateLabel.textColor = (self.reminderSwitch.isOn ? .black : .gray)
+                self.datePicker.isEnabled = self.reminderSwitch.isOn
                 self.tableView.beginUpdates()
                 self.tableView.endUpdates()
             }
@@ -116,6 +128,7 @@ class ToDoDetailTableViewController: UITableViewController {
         dateLabel.text = dateFormatter.string(from: sender.date)
     }
     
+  
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         enableDisableSaveButton(text: sender.text!)
     }
@@ -126,7 +139,11 @@ extension ToDoDetailTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath {
         case datePickerIndexPath:
-            return reminderSwitch.isOn ? datePicker.frame.height : 0
+            if #available(iOS 14.0, *) {
+                return 0
+            } else {
+                return reminderSwitch.isOn ? datePicker.frame.height : 0
+            }
         case notesTextViewIndexPath:
             return notesRowHeight
         default:
